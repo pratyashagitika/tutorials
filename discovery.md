@@ -123,6 +123,10 @@ priordict = {
 logl = rn.logL
 # logprior = ds.makelogprior_uniform(logl.params, priordict)
 
+```
+For each parameter, check the range of priors
+
+```python
 for par in logl.params:
         print(par, ds.getprior_uniform(par, priordict))
 ```
