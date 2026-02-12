@@ -63,7 +63,9 @@ for p in psrs:
 Seems to require a white noise file. I am not sure if EFAC and EQUAD parameters can be set manually to a constant value (see below)
 and here the noisedict attribute can be set as `p.noisedict={}`.
 
-Define individual pulsar likelihoods
+## Define individual pulsar likelihoods
+
+The individual pulsar likelihoods combine all individual noise models e.g. WN, RN and any deterministic delays.
 
 ```python
 
@@ -79,6 +81,8 @@ for psr in psrs:
 ```
 
 ## Test 1: Adding just red noise in all pulsars
+
+The PTA likelihood then combines all individual pulsar likelihoods and adds any common noise process (e.g. CURN) or Hellings and Downs correlations on top of it.
 
 ```python
 rn = ds.ArrayLikelihood(
@@ -298,7 +302,7 @@ flogl = ds_numpyro.makemodel_transformed(curn.logL, priordict=priordict)
 sampler = ds_numpyro.makesampler_nuts(flogl)
 ```
 
-Test 9: Changing the number of samples being sampled
+## Test 9: Changing the number of samples being sampled
 The default is 1024. Using num_samples = 1e5 doesn't work as it's a float, needs to be an integer like 100_000
 
 ```python
