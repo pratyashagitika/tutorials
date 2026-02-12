@@ -1,8 +1,8 @@
-## Discovery
+## Getting started with Discovery
 
-Here are few examples of basic PTA operations with `discovery`. This helped me understand how to get started with `discovery`. 
-Therefore adding this here in case anyone else is in the same boat!
-This is an attempt at creating examples which are similar in structure to how `enterprise`
+Here are a few examples of basic PTA operations with `discovery`. This helped me understand how to get started with `discovery`. 
+Therefore, adding this here in case anyone else is in the same boat!
+This is an attempt at creating examples that are similar in structure to how `enterprise`
 handles model selection as people are familiar with that framework.
 The structure follows nine tests and shows how to customise basic operations in `discovery`.
 
@@ -210,8 +210,8 @@ hd = ds.ArrayLikelihood(
 
 ## Test 7: Add only deterministic signals
 
-Big difference between enterprise and discovery in case of continuous waves
- is the existence of binary model in fourier space
+Big difference between enterprise and discovery in the case of continuous waves
+ is the existence of a binary model in the Fourier space
  and can be incorporated into globalgp along with HD
 
 ```python 
@@ -299,7 +299,7 @@ sampler = ds_numpyro.makesampler_nuts(flogl)
 ```
 
 Test 9: Changing the number of samples being sampled
-The default is 1024. Using num_samples = 1e5 doesnt work as float, needs to be an integer like 100_000 such as
+The default is 1024. Using num_samples = 1e5 doesn't work as it's a float, needs to be an integer like 100_000
 
 ```python
 
