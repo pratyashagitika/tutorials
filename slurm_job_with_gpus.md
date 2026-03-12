@@ -1,1 +1,24 @@
+## Requesting GPUs on Mortimer
+
+This tutorial shows how to request GPUs on Mortimer, the computer cluster at Center for Gravitation, Cosmology and Astrophysics, UWM.
+
+On Mortimer, there are only few GPUs available. Each GPU partition has 8 nodes. To see which GPU partitions are available, run
+
+```bash
+sinfo -N -o "%P %N %c %m %G" | grep gpu
+```
+
+This will print out a list of partition name, node name, number of CPUs on the node, memory per node in MB and other resources like GPUs. For example
+```bash
+sahalabgpu execute-4001 64 1028000 gpu:8(S:0-1)
+```
+
+Our aim is to launch the job into one of these GPU enabled partitions. To do so, add the following lines to your slurm script.
+
+```bash
+#SBATCH --gres=gpu:1   # Request 1 GPU
+#SBATCH --partition=sahalabgpu # Request specific partition
+```
+
+Now you are all set to launch your job!
 
