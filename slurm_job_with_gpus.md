@@ -8,8 +8,9 @@ On Mortimer, there are only few GPUs available. Each GPU partition has 8 nodes. 
 sinfo -N -o "%P %N %c %m %G" | grep gpu
 ```
 
-This will print out a list of partition name, node name, number of CPUs on the node, memory per node in MB and other resources like GPUs. For example
+This will print out a list of partition name, node name, number of CPUs on the node, memory per node in MB and other resources like GPUs. For example, you may see something like
 ```bash
+bioxfel execute-4000 64 1028000 gpu:8
 sahalabgpu execute-4001 64 1028000 gpu:8(S:0-1)
 ```
 
