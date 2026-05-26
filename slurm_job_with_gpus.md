@@ -41,7 +41,7 @@ Our aim is to launch the job into one of these GPU-enabled partitions. To do so,
 ```bash
 #SBATCH --gres=gpu:1   # Request 1 GPU
 #SBATCH --partition=gpu # Request specific partition
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=20
 ```
 
 Now you are all set to launch your job!
